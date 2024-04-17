@@ -2,12 +2,12 @@
   width: 100%;
   padding: 0 20px;
   float: left;
-  background-color: #f7f7f7;
+  background-color: rgb(255, 255, 255);
   display: flex;
   justify-content: flex-end;
   align-items: center;
   column-gap: 20px;
-  height: 80px;
+  height: 74px;
 }
 
 .header img {

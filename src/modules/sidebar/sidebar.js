@@ -1,5 +1,4 @@
 import React from "react";
-import logoutIcon from "./../../images/icons/power-off-white.png";
 import {
   CDBSidebar,
   CDBSidebarHeader,
@@ -25,7 +24,12 @@ export const Sidebar = () => {
 
   return (
     <div className="sidebar-container">
-      <CDBSidebar textColor="#fff" backgroundColor="#333" id="mainSidebar">
+      <CDBSidebar
+        textColor="#fff"
+        backgroundColor="#323a49"
+        id="mainSidebar"
+        toggled
+      >
         <CDBSidebarHeader
           prefix={<i onClick={resizePanel} className="fa fa-bars fa-large"></i>}
         >
@@ -37,7 +41,6 @@ export const Sidebar = () => {
             Panel
           </Link>
         </CDBSidebarHeader>
-
         <CDBSidebarContent className="sidebar-content">
           <CDBSidebarMenu>
             <Link
@@ -64,22 +67,6 @@ export const Sidebar = () => {
             </Link>
           </CDBSidebarMenu>
         </CDBSidebarContent>
-        <CDBSidebarFooter>
-          {
-            <div className="pb-1">
-              <img
-                style={{
-                  width: "40px",
-                  height: "auto",
-                  display: "block",
-                  margin: "0 auto",
-                  cursor: "pointer",
-                }}
-                src={logoutIcon}
-              />
-            </div>
-          }
-        </CDBSidebarFooter>
       </CDBSidebar>
     </div>
   );

@@ -30,16 +30,25 @@ b {
   float: left;
   overflow: scroll initial;
   width: fit-content;
+  position: absolute;
+  z-index: 1;
 }
 /*SIDEBAR*/
 
 /*CONTAINER*/
 .main-container {
-  float: left;
-  width: calc(100% - 270px);
-  transition: 0.3s;
-}
-.long-container {
+  float: right;
   width: calc(100% - 80px);
+  transition: 0.3s;
+  background-color: #f3f4f7;
+  height: 100vh;
+}
+
+.main-container .container-box {
+  width: 100%;
+  float: left;
+  height: calc(100% - 74px);
+  overflow: auto;
+  overflow-x: hidden;
 }
 /*CONTAINER*/
