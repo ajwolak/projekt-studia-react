@@ -1,13 +1,28 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import "./css/index.css";
+import React from "react";
+import ReactDOM from "react-dom/client";
+import reportWebVitals from "./reportWebVitals";
+import { MainLayout } from "./layouts/main-layout.js";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { Products } from "./pages/products.js";
+import { Dashboard } from "./pages/dashboard.js";
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <App />
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<MainLayout />}>
+          <Route index element={<Dashboard />} />
+        </Route>
+        <Route path="/products" element={<MainLayout />}>
+          <Route index element={<Products />} />
+        </Route>
+        <Route path="/users" element={<MainLayout />}>
+          <Route index element={<Products />} />
+        </Route>
+      </Routes>
+    </BrowserRouter>
   </React.StrictMode>
 );
 
