@@ -7,6 +7,7 @@ import {
   CardFooter,
   ToggleButtonGroup,
   ToggleButton,
+  CardHeader,
 } from "react-bootstrap";
 import ProgressBar from "react-bootstrap/ProgressBar";
 import chart1 from "./../images/icons/chart-1.png";
@@ -107,7 +108,7 @@ export const Dashboard = () => {
           </Row>
         </CardBody>
         <CardFooter>
-          <Row className="row-cols-xl-5 row-cols-lg-4 row-cols-sm-2 row-cols-1 g-4 mb-2 text-center">
+          <Row className="row-cols-xl-4 row-cols-lg-4 row-cols-sm-2 row-cols-1 g-4 mb-2 text-center">
             <Col>
               <div class="text-body-secondary">XYZ</div>
               <div class="fw-semibold text-truncate">250 xyz (40%)</div>
@@ -126,11 +127,66 @@ export const Dashboard = () => {
             <Col>
               <div class="text-body-secondary">XYZ</div>
               <div class="fw-semibold text-truncate">250 xyz (80%)</div>
-              <ProgressBar variant="danger" now={40} />
+              <ProgressBar variant="danger" now={80} />
             </Col>
           </Row>
         </CardFooter>
       </Card>
+      <Row>
+        <Col>
+        <Card className="mb-4">
+          <CardHeader>Ruch i sprzedaż</CardHeader>
+          <CardBody>
+            <Row>
+              <Col className="col-xl-6 col-md-6 col-12">
+                <Row>
+                  <Col className="col-6">
+                    <div className="border-start border-start-4 border-start-info py-1 px-3">
+                      <div className="text-body-secondary text-truncate small">Nowi klienci</div>
+                      <div className="fs-5 fw-semibold">2532</div>
+                    </div>
+                  </Col>
+                  <Col className="col-6">
+                  <div className="border-start border-start-4 border-start-danger py-1 px-3 mb-3">
+                      <div className="text-body-secondary text-truncate small">Powracający klienci</div>
+                      <div className="fs-5 fw-semibold">8356</div>
+                    </div>
+                  </Col>
+                </Row>
+               <br />
+              <div className="progress-group mb-4">
+                <div className="progress-group-prepend">
+                  <span className="text-body-secondary small">Styczeń</span>
+                </div>
+                <div className="progress-group-bars">
+                  <ProgressBar variant="info" now={40}></ProgressBar>
+                  <ProgressBar variant="danger" now={80}></ProgressBar>
+                </div>
+              </div>
+              <div className="progress-group mb-4">
+                <div className="progress-group-prepend">
+                  <span className="text-body-secondary small">Luty</span>
+                </div>
+                <div className="progress-group-bars">
+                  <ProgressBar variant="info" now={20}></ProgressBar>
+                  <ProgressBar variant="danger" now={60}></ProgressBar>
+                </div>
+              </div>
+              <div className="progress-group mb-4">
+                <div className="progress-group-prepend">
+                  <span className="text-body-secondary small">Marzec</span>
+                </div>
+                <div className="progress-group-bars">
+                  <ProgressBar variant="info" now={50}></ProgressBar>
+                  <ProgressBar variant="danger" now={55}></ProgressBar>
+                </div>
+              </div>
+              </Col>
+            </Row>
+          </CardBody>
+        </Card>
+        </Col>
+      </Row>
     </div>
   );
 };

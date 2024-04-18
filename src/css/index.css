@@ -42,6 +42,8 @@ b {
   transition: 0.3s;
   background-color: #f3f4f7;
   height: 100vh;
+  display: block;
+  overflow: hidden;
 }
 
 .main-container .container-box {
@@ -50,5 +52,12 @@ b {
   height: calc(100% - 74px);
   overflow: auto;
   overflow-x: hidden;
+}
+
+@media (min-width: 1400px) {
+  .container-media-frames {
+    width: 1400px;
+    margin: 0 auto;
+  }
 }
 /*CONTAINER*/
