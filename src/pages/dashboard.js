@@ -138,7 +138,7 @@ export const Dashboard = () => {
           <CardHeader>Ruch i sprzedaż</CardHeader>
           <CardBody>
             <Row>
-              <Col className="col-xl-6 col-md-6 col-12">
+              <Col className="col-xl-12 col-md-12 col-12">
                 <Row>
                   <Col className="col-6">
                     <div className="border-start border-start-4 border-start-info py-1 px-3">
