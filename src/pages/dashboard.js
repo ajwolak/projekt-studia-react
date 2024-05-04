@@ -159,8 +159,8 @@ export const Dashboard = () => {
                   <span className="text-body-secondary small">Styczeń</span>
                 </div>
                 <div className="progress-group-bars">
-                  <ProgressBar variant="info" now={40}></ProgressBar>
-                  <ProgressBar variant="danger" now={80}></ProgressBar>
+                  <ProgressBar className="mb-2" variant="info" now={40}></ProgressBar>
+                  <ProgressBar className="mb-2" variant="danger" now={80}></ProgressBar>
                 </div>
               </div>
               <div className="progress-group mb-4">
@@ -168,8 +168,8 @@ export const Dashboard = () => {
                   <span className="text-body-secondary small">Luty</span>
                 </div>
                 <div className="progress-group-bars">
-                  <ProgressBar variant="info" now={20}></ProgressBar>
-                  <ProgressBar variant="danger" now={60}></ProgressBar>
+                  <ProgressBar className="mb-2" variant="info" now={20}></ProgressBar>
+                  <ProgressBar className="mb-2" variant="danger" now={60}></ProgressBar>
                 </div>
               </div>
               <div className="progress-group mb-4">
@@ -177,8 +177,8 @@ export const Dashboard = () => {
                   <span className="text-body-secondary small">Marzec</span>
                 </div>
                 <div className="progress-group-bars">
-                  <ProgressBar variant="info" now={50}></ProgressBar>
-                  <ProgressBar variant="danger" now={55}></ProgressBar>
+                  <ProgressBar className="mb-2" variant="info" now={50}></ProgressBar>
+                  <ProgressBar className="mb-2" variant="danger" now={55}></ProgressBar>
                 </div>
               </div>
               </Col>

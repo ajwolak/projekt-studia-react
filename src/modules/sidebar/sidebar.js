@@ -12,16 +12,6 @@ import { Link, useLocation } from "react-router-dom";
 export const Sidebar = () => {
   const location = useLocation();
 
-  const resizePanel = () => {
-    if (document.getElementById("mainSidebar").classList.contains("toggled")) {
-      document
-        .getElementById("mainContainer")
-        .classList.remove("long-container");
-    } else {
-      document.getElementById("mainContainer").classList.add("long-container");
-    }
-  };
-
   return (
     <div className="sidebar-container">
       <CDBSidebar
@@ -31,7 +21,7 @@ export const Sidebar = () => {
         toggled
       >
         <CDBSidebarHeader
-          prefix={<i onClick={resizePanel} className="fa fa-bars fa-large"></i>}
+          prefix={<i  className="fa fa-bars fa-large"></i>}
         >
           <Link
             to="/"
