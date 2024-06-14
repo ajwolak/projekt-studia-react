@@ -1,5 +1,5 @@
 import React from "react";
-import { Container, NavLink } from "react-bootstrap";
+import { Container } from "react-bootstrap";
 import { Outlet } from "react-router-dom";
 import { Sidebar } from "../modules/sidebar/sidebar";
 import { Header } from "../modules/header/header";

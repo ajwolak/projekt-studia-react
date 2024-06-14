@@ -1,10 +1,7 @@
-import { Link } from "react-router-dom";
 import "./../../css/header.css";
 import adminIcon from "./../../images/icons/admin.png";
 import React, { useState } from "react";
-import { Navbar, Nav, Dropdown } from "react-bootstrap";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBars } from "@fortawesome/free-solid-svg-icons";
+import { Nav, Dropdown } from "react-bootstrap";
 
 export const Header = () => {
   const [showMenu, setShowMenu] = useState(false);
@@ -14,13 +11,14 @@ export const Header = () => {
   };
   return (
     <div className="header pb-2 pt-2" id="mainHeder">
+      <div className="container-media-frames">
       <div>
         <p>Cześć, Tomek!</p>
       </div>
       <div>
         <Dropdown show={showMenu}>
           <Dropdown.Toggle as={Nav.Link} onClick={handleMenuToggle}>
-            <img src={adminIcon} />
+            <img src={adminIcon} alt="" />
           </Dropdown.Toggle>
           <Dropdown.Menu>
             <Dropdown.Item>Ustawienia konta</Dropdown.Item>
@@ -28,6 +26,7 @@ export const Header = () => {
             <Dropdown.Item>Wyloguj</Dropdown.Item>
           </Dropdown.Menu>
         </Dropdown>
+      </div>
       </div>
     </div>
   );

@@ -5,7 +5,6 @@ import {
   CDBSidebarContent,
   CDBSidebarMenu,
   CDBSidebarMenuItem,
-  CDBSidebarFooter,
 } from "cdbreact";
 import { Link, useLocation } from "react-router-dom";
 
@@ -20,9 +19,7 @@ export const Sidebar = () => {
         id="mainSidebar"
         toggled
       >
-        <CDBSidebarHeader
-          prefix={<i  className="fa fa-bars fa-large"></i>}
-        >
+        <CDBSidebarHeader prefix={<i className="fa fa-bars fa-large"></i>}>
           <Link
             to="/"
             className="text-decoration-none"
@@ -34,13 +31,16 @@ export const Sidebar = () => {
         <CDBSidebarContent className="sidebar-content">
           <CDBSidebarMenu>
             <Link
-              to="/"
-              className={location.pathname === "/" ? "activeClicked" : ""}
+              to="/dashboard"
+              className={
+                location.pathname === "/dashboard" ? "activeClicked" : ""
+              }
             >
               <CDBSidebarMenuItem icon="columns">
                 Strona główna
               </CDBSidebarMenuItem>
             </Link>
+
             <Link
               to="/products"
               className={
@@ -48,6 +48,16 @@ export const Sidebar = () => {
               }
             >
               <CDBSidebarMenuItem icon="list">Produkty</CDBSidebarMenuItem>
+            </Link>
+            <Link
+              to="/new/products"
+              className={
+                location.pathname === "/new/products" ? "activeClicked" : ""
+              }
+            >
+              <CDBSidebarMenuItem icon="fa-solid fa-plus">
+                Dodaj produkt
+              </CDBSidebarMenuItem>
             </Link>
             <Link
               to="/users"

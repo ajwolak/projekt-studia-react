@@ -3,11 +3,16 @@
   padding: 0 20px;
   float: left;
   background-color: rgb(255, 255, 255);
+  column-gap: 20px;
+  height: 75px;
+  border-bottom: 1px solid #acacac;
+}
+
+.header .container-media-frames {
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  column-gap: 20px;
-  height: 74px;
+  column-gap: 25px;
 }
 
 .header img {
