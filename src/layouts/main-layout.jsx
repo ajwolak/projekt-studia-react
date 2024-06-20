@@ -10,11 +10,11 @@ export function MainLayout() {
       <Sidebar />
       <div className="main-container" id="mainContainer">
         <Header />
-          <Container fluid className="container-box">
-        <div className="container-media-frames">
+        <Container fluid className="container-box">
+          <div className="container-media-frames">
             <Outlet />
-        </div>
-          </Container>
+          </div>
+        </Container>
       </div>
     </div>
   );

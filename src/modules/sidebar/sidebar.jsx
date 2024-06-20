@@ -50,9 +50,9 @@ export const Sidebar = () => {
               <CDBSidebarMenuItem icon="list">Produkty</CDBSidebarMenuItem>
             </Link>
             <Link
-              to="/new/products"
+              to="/new-product"
               className={
-                location.pathname === "/new/products" ? "activeClicked" : ""
+                location.pathname === "/new-product" ? "activeClicked" : ""
               }
             >
               <CDBSidebarMenuItem icon="fa-solid fa-plus">
@@ -64,6 +64,24 @@ export const Sidebar = () => {
               className={location.pathname === "/users" ? "activeClicked" : ""}
             >
               <CDBSidebarMenuItem icon="user">Użytkownicy</CDBSidebarMenuItem>
+            </Link>
+            <Link
+              to="/orders"
+              className={location.pathname === "/orders" ? "activeClicked" : ""}
+            >
+              <CDBSidebarMenuItem icon="fa-solid fa-store">
+                Zamówienia
+              </CDBSidebarMenuItem>
+            </Link>
+            <Link
+              to="/invoice"
+              className={
+                location.pathname === "/invoice" ? "activeClicked" : ""
+              }
+            >
+              <CDBSidebarMenuItem icon="fa-solid fa-file-invoice-dollar">
+                Wystaw fakturę
+              </CDBSidebarMenuItem>
             </Link>
           </CDBSidebarMenu>
         </CDBSidebarContent>

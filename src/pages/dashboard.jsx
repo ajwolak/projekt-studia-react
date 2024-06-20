@@ -10,6 +10,7 @@ import {
 } from "react-bootstrap";
 import ProgressBar from "react-bootstrap/ProgressBar";
 import { useEffect, useRef } from "react";
+import { DashboardCard } from "../components/dasboard-cart/dashboard-card.tsx";
 
 export const Dashboard = () => {
   const chartRef = useRef(null);
@@ -20,8 +21,8 @@ export const Dashboard = () => {
 
   useEffect(() => {
     const { ApexCharts } = window;
-    //duży wykres
-    var options = {
+    // Duży wykres
+    const options = {
       series: [
         { data: [10, 41, 35, 51, 49, 62, 69, 91, 148, 55, 10, 41] },
         { data: [87, 116, 99, 103, 130, 149, 52, 1, 87, 55, 87, 116] },
@@ -47,7 +48,7 @@ export const Dashboard = () => {
   useEffect(() => {
     const { ApexCharts } = window;
     const createChart = (ref, data) => {
-      var options = {
+      const options = {
         colors: ["rgba(255,255,255,0.5)"],
         series: [{ data: data }],
         chart: {
@@ -83,6 +84,7 @@ export const Dashboard = () => {
     const chart2 = createChart(chartRef2, data2);
     const chart3 = createChart(chartRef3, data3);
     const chart4 = createChart(chartRef4, data4);
+
     return () => {
       chart1.destroy();
       chart2.destroy();
@@ -121,33 +123,21 @@ export const Dashboard = () => {
       ref: chartRef4,
     },
   };
-  var cards_output = [];
-
-  for (var key in arr) {
-    const { color, name, value, subvalue, ref } = arr[key];
-    cards_output.push(
-      <Col className="col-xxl-3 col-xl-4 col-sm-6" key={key}>
-        <Card className={`text-white ${color}`}>
-          <CardBody className="pb-0 d-flex justify-content-between flex-wrap align-items-start">
-            <div>
-              <div className="fs-4 fw-semibold">
-                {value}
-                <span className="fs-6 fw-normal"> {subvalue}</span>
-              </div>
-              <div>{name}</div>
-            </div>
-            <div className="chart-wrapper mt-3" style={{ width: "100%" }}>
-              <div ref={ref}></div>
-            </div>
-          </CardBody>
-        </Card>
-      </Col>
-    );
-  }
 
   return (
-    <div>
-      <Row className="g-4 mb-4 mt-2">{cards_output}</Row>
+    <>
+      <Row className="g-4 mb-4 mt-4">
+        {Object.keys(arr).map((key) => (
+          <DashboardCard
+            key={key}
+            color={arr[key].color}
+            name={arr[key].name}
+            value={arr[key].value}
+            subvalue={arr[key].subvalue}
+            chartRef={arr[key].ref}
+          />
+        ))}
+      </Row>
       <Card className="mb-4">
         <CardBody>
           <Row>
@@ -294,6 +284,6 @@ export const Dashboard = () => {
           </Card>
         </Col>
       </Row>
-    </div>
+    </>
   );
 };
